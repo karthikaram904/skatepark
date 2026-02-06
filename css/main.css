@@ -7461,6 +7461,10 @@ body.lesson-page-sec .class-info p{
     .sk-logo img {
         max-width: 130px;
     }
+  #rtl-toggle,#theme-toggle
+  {
+    display:none;
+}
 }
 @media (max-width: 575px) {
 
