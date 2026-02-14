@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="img/fav.png">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- Main site css -->
+<link rel="stylesheet" href="css/main.css">
+
+<style>
+/* ===============================
+   LOGOUT PAGE ONLY CSS
+=============================== */
+
+.logout-layout{
+    display:flex;
+    min-height:100vh;
+    background:#f5f7fc;
+}
+
+.logout-main{
+    flex:1;
+    margin-left:260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    transition:all 0.3s ease;
+}
+
+.logout-card{
+    background:#fff;
+    max-width:420px;
+    width:100%;
+    padding:35px 30px;
+    border-radius:14px;
+    text-align:center;
+    box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.logout-icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 20px;
+    background:#ffecec;
+    color:#dc3545;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+
+.logout-card h2{
+    font-size:22px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.logout-card p{
+    font-size:14px;
+    color:#666;
+    margin-bottom:25px;
+}
+
+.logout-actions{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+}
+
+.logout-actions a{
+    padding:10px 18px;
+    border-radius:8px;
+    font-size:14px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.logout-confirm{
+    background:#dc3545;
+    color:#fff;
+}
+
+.logout-confirm:hover{
+    background:#c82333;
+}
+
+.logout-cancel{
+    background:#e9ecef;
+    color:#333;
+}
+
+.logout-cancel:hover{
+    background:#d6d8db;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media(max-width:991px){
+    .logout-main{
+        margin-left:0;
+        width:100%;
+    }
+}
+
+@media(max-width:576px){
+    .logout-card{
+        padding:28px 22px;
+    }
+
+    .logout-card h2{
+        font-size:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logout-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sk-sidebar" id="skSidebar">
+        <div class="sk-logo">
+            <a href="index.html">
+                <img src="img/skate/skate-logo.png" alt="Logo">
+            </a>
+        </div>
+
+        <ul class="sk-menu">
+            <li><a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+            <li><a href="session-pass.html"><i class="fa fa-ticket"></i> Session Pass Sales</a></li>
+            <li><a href="class-booking.html"><i class="fa fa-calendar"></i> Class Booking</a></li>
+            <li><a href="instructors.html"><i class="fa fa-user"></i> Instructors</a></li>
+            <li><a href="students.html"><i class="fa fa-users"></i> Students</a></li>
+            <li  class="active"><a href="logout.html"><i class="fa fa-cog"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="logout-main">
+
+        <div class="logout-card">
+            <div class="logout-icon">
+                <i class="fa fa-sign-out"></i>
+            </div>
+
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to logout from your account?</p>
+
+            <div class="logout-actions">
+                <a href="login.html" class="logout-confirm">Yes, Logout</a>
+                <a href="dashboard.html" class="logout-cancel">Cancel</a>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    const toggleBtn = document.getElementById("skToggle");
+    const sidebar = document.getElementById("skSidebar");
+
+    if(toggleBtn){
+        toggleBtn.addEventListener("click", function(){
+            sidebar.classList.toggle("show");
+        });
+    }
+});
+</script>
+
+</body>
+</html>

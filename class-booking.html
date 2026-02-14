@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="img/fav.png">
+    <!-- Icons -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Main site css -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- CLASS BOOKING PAGE CSS -->
+    <style>
+    /* ===============================
+       CLASS BOOKING PAGE ONLY
+       No conflict with other pages
+    =============================== */
+
+    .cb-layout{
+        display:flex;
+        width:100%;
+        min-height:100vh;
+        background:#f4f6fb;
+    }
+
+    
+
+    .cb-main{
+  flex: 1;
+  margin-left: 260px;
+  padding: 25px;
+  transition: margin-left 0.3s ease;
+    }
+
+    .cb-header{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:25px;
+    }
+
+    .cb-header h2{
+        font-size:24px;
+        font-weight:600;
+        color:#222;
+    }
+
+    .cb-card{
+        background:#fff;
+        border-radius:10px;
+        padding:20px;
+        margin-bottom:20px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.06);
+    }
+
+    .cb-table{
+        width:100%;
+        border-collapse:collapse;
+    }
+
+    .cb-table th,
+    .cb-table td{
+        padding:14px 12px;
+        text-align:left;
+        border-bottom:1px solid #eee;
+        font-size:14px;
+    }
+
+    .cb-table th{
+        background:#f1f3f9;
+        font-weight:600;
+    }
+
+    .cb-status{
+        padding:4px 12px;
+        border-radius:20px;
+        font-size:12px;
+        color:#fff;
+        display:inline-block;
+    }
+
+    .cb-confirmed{ background:#28a745; }
+    .cb-upcoming{ background:#007bff; }
+    .cb-cancelled{ background:#dc3545; }
+
+    /* ===============================
+       MOBILE / TAB VIEW
+    =============================== */
+    @media(max-width:991px){
+
+        .cb-main{
+            width:100%;
+            padding:20px;
+        }
+
+        .cb-layout .sk-sidebar{
+            position:fixed;
+            top:0;
+            left:-260px;
+            height:100%;
+            z-index:999;
+            transition:0.3s;
+        }
+
+        .cb-layout .sk-sidebar.show{
+            left:0;
+        }
+
+        .cb-header{
+            flex-direction:column;
+            align-items:flex-start;
+            gap:10px;
+        }
+
+        .cb-table{
+            display:block;
+            overflow-x:auto;
+            white-space:nowrap;
+        }
+    }
+    </style>
+</head>
+
+<body>
+
+<div class="cb-layout">
+
+    <!-- SIDEBAR (same dashboard sidebar) -->
+    <aside class="sk-sidebar" id="skSidebar">
+        <div class="sk-logo">
+            <a class="navbar-brand logo_h" href="index.html">
+                <img src="img/skate/skate-logo.png" alt="Skate Logo">
+            </a>
+        </div>
+
+        <ul class="sk-menu">
+            <li><a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+            <li><a href="session-pass.html"><i class="fa fa-ticket"></i> Session Pass Sales</a></li>
+            <li class="active"><a href="class-booking.html"><i class="fa fa-calendar"></i> Class Booking</a></li>
+            <li><a href="instructors.html"><i class="fa fa-user"></i> Instructors</a></li>
+            <li><a href="students.html"><i class="fa fa-users"></i> Students</a></li>
+            <li><a href="logout.html"><i class="fa fa-cog"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="cb-main">
+
+       <!-- TOP BAR -->
+        <div class="sk-topbar">
+            <span class="sk-toggle" id="skToggle">
+                <i class="fa fa-bars"></i>
+            </span>
+            <h3>Class Booking</h3>
+        </div>
+
+
+        <div class="cb-card">
+            <table class="cb-table">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Instructor</th>
+                        <th>Class Type</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arjun</td>
+                        <td>Coach Ravi</td>
+                        <td>Beginner Skate</td>
+                        <td>22 Jan 2026</td>
+                        <td>6:00 PM</td>
+                        <td><span class="cb-status cb-confirmed">Confirmed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Meena</td>
+                        <td>Coach Santhosh</td>
+                        <td>Advanced Tricks</td>
+                        <td>24 Jan 2026</td>
+                        <td>7:30 PM</td>
+                        <td><span class="cb-status cb-upcoming">Upcoming</span></td>
+                    </tr>
+                    <tr>
+                        <td>Karthik</td>
+                        <td>Coach Ravi</td>
+                        <td>Street Practice</td>
+                        <td>26 Jan 2026</td>
+                        <td>5:30 PM</td>
+                        <td><span class="cb-status cb-cancelled">Cancelled</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+</div>
+
+<!-- Sidebar toggle JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    const toggleBtn = document.getElementById("skToggle");
+    const sidebar = document.getElementById("skSidebar");
+
+    if(toggleBtn){
+        toggleBtn.addEventListener("click", function(){
+            sidebar.classList.toggle("show");
+        });
+    }
+});
+</script>
+
+</body>
+</html>
