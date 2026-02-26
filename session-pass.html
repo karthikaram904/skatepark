@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Pass Sales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="img/fav.png">
+    <!-- Icons -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Main site css -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- SESSION PASS PAGE CSS -->
+    <style>
+    /* ===============================
+       SESSION PASS PAGE ONLY CSS
+       =============================== */
+
+    
+    .sp-main{
+         flex: 1;
+  margin-left: 260px;
+  padding: 25px;
+  transition: margin-left 0.3s ease;
+    }
+
+    .sp-header{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:25px;
+    }
+
+    .sp-header h2{
+        font-size:24px;
+        font-weight:600;
+        color:#222;
+    }
+
+    .sp-add-btn{
+        background:#007bff;
+        color:#fff;
+        padding:10px 16px;
+        font-size:14px;
+        border-radius:8px;
+        text-decoration:none;
+    }
+
+    .sp-cards{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+        gap:20px;
+    }
+
+    .sp-card{
+        background:#fff;
+        border-radius:14px;
+        padding:22px;
+        box-shadow:0 6px 18px rgba(0,0,0,0.06);
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+    }
+
+    .sp-card h3{
+        font-size:18px;
+        font-weight:600;
+        color:#222;
+        margin-bottom:6px;
+    }
+
+    .sp-card p{
+        font-size:14px;
+        color:#666;
+        margin-bottom:15px;
+    }
+
+    .sp-meta{
+        display:flex;
+        justify-content:space-between;
+        font-size:14px;
+        margin-bottom:15px;
+        color:#333;
+    }
+
+    .sp-price{
+        font-size:22px;
+        font-weight:700;
+        color:#007bff;
+    }
+
+    .sp-actions{
+        display:flex;
+        gap:10px;
+        margin-top:15px;
+    }
+
+    .sp-actions a{
+        flex:1;
+        text-align:center;
+        padding:10px;
+        font-size:13px;
+        border-radius:8px;
+        text-decoration:none;
+    }
+
+    .sp-edit{
+        background:#e9f2ff;
+        color:#0056b3;
+    }
+
+    .sp-delete{
+        background:#ffe9ec;
+        color:#b02a37;
+    }
+
+
+    /* ===============================
+       RESPONSIVE
+    =============================== */
+
+    @media(max-width:991px){
+        .sp-main{
+            width:100%;
+            padding:20px;
+        }
+
+       
+    }
+
+    @media(max-width:576px){
+        .sp-header{
+            flex-direction:column;
+            align-items:flex-start;
+            gap:12px;
+        }
+
+        .sp-header h2{
+            font-size:20px;
+        }
+    }
+    /* ===============================
+   DESKTOP ONLY
+================================ */
+@media(min-width:992px){
+    .sp-main{
+        margin-left:260px;
+    }
+}
+
+/* ===============================
+   TAB + MOBILE FIX
+================================ */
+@media(max-width:991px){
+
+    .sp-main{
+        margin-left:0;      /* 🔥 IMPORTANT */
+        width:100%;
+        padding:20px;
+    }
+
+    
+}
+
+/* ===============================
+   SMALL MOBILE
+================================ */
+@media(max-width:576px){
+
+    .sp-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
+    .sp-add-btn{
+        width:100%;
+        text-align:center;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+<div class="sp-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sk-sidebar" id="skSidebar">
+        <div class="sk-logo">
+            <a class="navbar-brand logo_h" href="index.html">
+                <img src="img/skate/skate-logo.png" alt="Skate Logo">
+            </a>
+        </div>
+
+        <ul class="sk-menu">
+            <li><a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+            <li class="active"><a href="session-pass.html"><i class="fa fa-ticket"></i> Session Pass Sales</a></li>
+            <li><a href="class-booking.html"><i class="fa fa-calendar"></i> Class Booking</a></li>
+            <li><a href="instructors.html"><i class="fa fa-user"></i> Instructors</a></li>
+            <li><a href="students.html"><i class="fa fa-users"></i> Students</a></li>
+            <li><a href="logout.html"><i class="fa fa-cog"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="sp-main">
+
+        <div class="sk-topbar sp-header">
+            <span class="sk-toggle" id="skToggle">
+                <i class="fa fa-bars"></i>
+            </span>
+            <h2>Session Pass Sales</h2>
+            <a href="#" class="sp-add-btn">
+                <i class="fa fa-plus"></i> Add Pass
+            </a>
+        </div>
+
+        <div class="sp-cards">
+
+            <div class="sp-card">
+                <div>
+                    <h3>Beginner Pass</h3>
+                    <p>Perfect for new skaters starting out</p>
+
+                    <div class="sp-meta">
+                        <span>Sessions: 5</span>
+                        <span>Validity: 30 Days</span>
+                    </div>
+
+                    <div class="sp-price">₹1,499</div>
+                </div>
+
+                <div class="sp-actions">
+                    <a href="#" class="sp-edit">Edit</a>
+                    <a href="#" class="sp-delete">Delete</a>
+                </div>
+            </div>
+
+            <div class="sp-card">
+                <div>
+                    <h3>Intermediate Pass</h3>
+                    <p>Skill improvement focused sessions</p>
+
+                    <div class="sp-meta">
+                        <span>Sessions: 10</span>
+                        <span>Validity: 60 Days</span>
+                    </div>
+
+                    <div class="sp-price">₹2,799</div>
+                </div>
+
+                <div class="sp-actions">
+                    <a href="#" class="sp-edit">Edit</a>
+                    <a href="#" class="sp-delete">Delete</a>
+                </div>
+            </div>
+
+            <div class="sp-card">
+                <div>
+                    <h3>Advanced Pro Pass</h3>
+                    <p>Instructor-led professional training</p>
+
+                    <div class="sp-meta">
+                        <span>Sessions: 20</span>
+                        <span>Validity: 90 Days</span>
+                    </div>
+
+                    <div class="sp-price">₹4,999</div>
+                </div>
+
+                <div class="sp-actions">
+                    <a href="#" class="sp-edit">Edit</a>
+                    <a href="#" class="sp-delete">Delete</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    const toggleBtn = document.getElementById("skToggle");
+    const sidebar = document.getElementById("skSidebar");
+
+    if(toggleBtn){
+        toggleBtn.addEventListener("click", function(){
+            sidebar.classList.toggle("show");
+        });
+    }
+});
+</script>
+
+</body>
+</html>

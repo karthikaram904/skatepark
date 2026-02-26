@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skate Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="img/fav.png">
+    <!-- Icons -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="sk-dashboard">
+
+    <!-- SIDEBAR -->
+     <aside class="sk-sidebar" id="skSidebar">
+        <div class="sk-logo">
+            <a class="navbar-brand logo_h" href="index.html">
+                <img src="img/skate/skate-logo.png" alt="Skate Logo">
+            </a>
+        </div>
+
+        <ul class="sk-menu">
+            <li class="active"><a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+            <li><a href="session-pass.html"><i class="fa fa-ticket"></i> Session Pass Sales</a></li>
+            <li><a href="class-booking.html"><i class="fa fa-calendar"></i> Class Booking</a></li>
+            <li><a href="instructors.html"><i class="fa fa-user"></i> Instructors</a></li>
+            <li><a href="students.html"><i class="fa fa-users"></i> Students</a></li>
+            <li><a href="logout.html"><i class="fa fa-cog"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="sk-main">
+
+        <!-- TOP BAR -->
+        <div class="sk-topbar">
+            <span class="sk-toggle" id="skToggle">
+                <i class="fa fa-bars"></i>
+            </span>
+            <h3>Dashboard</h3>
+        </div>
+
+        <!-- STATS -->
+        <div class="sk-cards">
+            <div class="sk-card"><h4>Session Pass Sales</h4><p>1,245</p></div>
+            <div class="sk-card"><h4>Class Bookings</h4><p>312</p></div>
+            <div class="sk-card"><h4>Instructors</h4><p>18</p></div>
+            <div class="sk-card"><h4>Students</h4><p>860</p></div>
+        </div>
+
+        <!-- TABLES -->
+        <div class="sk-content-grid">
+
+            <!-- SESSION PASS SALES -->
+            <div class="sk-box">
+                <h3>Recent Session Pass Sales</h3>
+                <table>
+                    <tr>
+                        <th>User</th>
+                        <th>Pass</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Arun</td>
+                        <td>Monthly</td>
+                        <td>₹2,500</td>
+                        <td class="success">Paid</td>
+                    </tr>
+                    <tr>
+                        <td>Karthik</td>
+                        <td>Weekly</td>
+                        <td>₹800</td>
+                        <td class="success">Paid</td>
+                    </tr>
+                    <tr>
+                        <td>Sneha</td>
+                        <td>Daily</td>
+                        <td>₹200</td>
+                        <td class="pending">Pending</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- CLASS BOOKINGS -->
+            <div class="sk-box">
+                <h3>Instructor-Led Class Bookings</h3>
+                <table>
+                    <tr>
+                        <th>Student</th>
+                        <th>Instructor</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                    <tr>
+                        <td>Rahul</td>
+                        <td>John</td>
+                        <td>12 Feb</td>
+                        <td>08:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Meena</td>
+                        <td>Alex</td>
+                        <td>13 Feb</td>
+                        <td>09:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Vijay</td>
+                        <td>Chris</td>
+                        <td>14 Feb</td>
+                        <td>06:00 PM</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggleBtn = document.getElementById("skToggle");
+    const sidebar = document.getElementById("skSidebar");
+
+    toggleBtn.addEventListener("click", function () {
+        sidebar.classList.toggle("show");
+    });
+
+});
+</script>
+</body>
+</html>
